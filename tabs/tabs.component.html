@@ -1,0 +1,41 @@
+<mat-tab-group>
+  <mat-tab label="First"> <h2>My Products</h2>
+    <ul class="heroes">
+      <li *ngFor="let prod of products">
+        <a routerLink="/detail/{{prod.pId}}">
+          <span class="badge">{{prod.pId}}</span> {{prod.pName}}
+        </a>
+        <button class="delete" title="purchase"
+          (click)="add(prod)">purchase</button>
+          <button class="delete" title="Delete"
+          (click)="delete(prod)">X</button>
+      </li>
+    </ul>
+     </mat-tab>
+
+  <mat-tab label="Second">
+    <ul class="heroes">
+      <li *ngFor="let pur of puchases">
+          <span class="badge">{{pur.id}}</span> {{pur.idprod}},{{pur.xCreatedAt}}
+      </li>
+    </ul>
+
+
+
+   </mat-tab>
+  <mat-tab label="Third">
+    <ngx-charts-bar-vertical
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-bar-vertical> </mat-tab>
+</mat-tab-group>

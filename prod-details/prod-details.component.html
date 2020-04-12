@@ -1,0 +1,16 @@
+<div *ngIf="prod">
+  <h2>{{prod.pName | uppercase}} Details</h2>
+  <div><span>pId: </span>{{prod.pId}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="prod.pName" placeholder="name"/>
+    </label>
+    <label>description:
+      <input [(ngModel)]="prod.pDesc" placeholder="desc"/>
+    </label>
+    <label>count:
+      <input [(ngModel)]="prod.count" placeholder="count"/>
+    </label>
+  </div>
+  <button (click)="save()">save</button>
+</div>
